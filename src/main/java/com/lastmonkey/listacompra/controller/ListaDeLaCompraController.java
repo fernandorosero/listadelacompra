@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ListaDeLaCompraController {
 
 	
-	@GetMapping("/listadodoc")
+	@GetMapping("/listado")
 	public String helloWorld(){
 		
 		return "listado";
