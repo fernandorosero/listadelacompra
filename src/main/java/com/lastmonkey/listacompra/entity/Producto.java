@@ -2,6 +2,7 @@ package com.lastmonkey.listacompra.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,13 +11,14 @@ import javax.persistence.Table;
 public class Producto {
 
 	@Id
-	@Column(name="id_producto", unique = true, nullable =  false, length = 10)
+	@GeneratedValue
+	@Column(name="id_producto")
 	private int id_producto;
 	
-	@Column(name="producto", nullable = false, length = 30)
+	@Column(name="producto")
 	private String producto;
 	
-	@Column(name="cantidad", nullable = false, length = 10)
+	@Column(name="cantidad")
 	private int cantidad;
 
 	public int getId_producto() {

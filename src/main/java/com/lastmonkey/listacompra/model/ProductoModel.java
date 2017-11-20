@@ -5,6 +5,7 @@ public class ProductoModel {
 	private int id_producto;
 	private String producto;
 	private int cantidad;
+	
 	public int getId_producto() {
 		return id_producto;
 	}

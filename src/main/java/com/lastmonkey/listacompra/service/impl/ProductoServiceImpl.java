@@ -16,6 +16,14 @@ import com.lastmonkey.listacompra.service.ProductoService;
 @Service("productoServiceImpl")
 public class ProductoServiceImpl implements ProductoService{
 
+	@Override
+	public Producto findProductoById(int id) {
+		// TODO Auto-generated method stub
+		Producto pr = new Producto();
+		//return productoRepository.findById(id);
+		return pr;
+	}
+
 	@Autowired
 	@Qualifier("productoRepository")
 	private ProductoRepository productoRepository;
@@ -35,5 +43,6 @@ public class ProductoServiceImpl implements ProductoService{
 		return productosModel;
 	}
 
+	
 	
 }

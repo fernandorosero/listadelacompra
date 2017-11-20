@@ -9,5 +9,5 @@ import com.lastmonkey.listacompra.entity.Producto;
 
 @Repository("productoRepository")
 public interface ProductoRepository extends JpaRepository<Producto, Serializable>{
-	public abstract Producto findById(int id);
+	//public abstract Producto findById(int id);
 }
