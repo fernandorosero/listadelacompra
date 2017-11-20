@@ -19,29 +19,31 @@
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 </head>
 <body>
-	<h1>Listado de Documentos</h1>
-	No te olvides del documento
-	<table>
-		<thead>
-			<tr>
-				<th>Id producto</th>
-				<th>Producto</th>
-				<th>Cantidad</th>
-			</tr>
-		</thead>
+	<div class="contenido">
+		<header>
+			<h2>Listado de Productos</h2>
+		</header>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Id producto</th>
+					<th>Producto</th>
+					<th>Cantidad</th>
+				</tr>
+			</thead>
 
-		<tbody>
-			<tr th:each="producto : ${productos}">
-				<td th:text="${producto.id_producto}"></td>
-				<td th:text="${producto.producto}"></td>
-				<td th:text="${producto.cantidad}"></td>
+			<tbody>
+				<tr th:each="producto : ${productos}">
+					<td th:text="${producto.id_producto}"></td>
+					<td th:text="${producto.producto}"></td>
+					<td th:text="${producto.cantidad}"></td>
 
-			</tr>
-		</tbody>
+				</tr>
+			</tbody>
 
 
-	</table>
-
+		</table>
+	</div>
 
 </body>
 </html>
