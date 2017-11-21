@@ -68,9 +68,11 @@ public class NewProController {
 	}
 	
 	@GetMapping("/eliminaproducto")
-	public ModelAndView borrarProducto(@RequestParam(name = "id", required = true)int id) {
+	//public ModelAndView borrarProducto(@RequestParam(name = "id", required = true)int id) { //de esta manera carga los datos enviados en la url
+	public String borrarProducto(@RequestParam(name = "id", required = true)int id) {//con esto recarga la vista limpia la url
 		productoServicio.borrarContacto(id);
-		return showPro();
+		//return showPro(); //de esta manera carga los datos enviados en la url
+		return "redirect:/listacompraweb/listado"; //con esto recarga la vista limpia la url
 	}
 
 }
