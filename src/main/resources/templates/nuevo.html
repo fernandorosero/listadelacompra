@@ -1,10 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1"/>
-<title>Insert title here</title>
+	<head>
+	<meta charset="ISO-8859-1"/>
+	<title>Agregar Documento</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	
+	<!-- JavaScript -->
+	<script th:src="@{/js/jquery-2.1.4.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/listadelacompra.js}"></script>
+	
+	
+	<!-- CSS -->
+	<link th:href="@{/css/listadelacompra.css}" rel="stylesheet" />
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 </head>
 <body>
-	<h2>Aqui el nuevo</h2>
+	<div class="contenido">
+		<h2>Nuevo Documento</h2>
+		
+		<form action="#" th:action="@{/nuevopro/agregarDoc}" th:object="${productoModel}" method="post" >
+			<input type="hidden" th:field="*{id_producto}"></input>
+			<div class="form-group">
+				<label>Nombre:</label>
+				<input type="text" class="form-control" th:field="*{producto}" th:value="${producto}"/>
+			</div>
+			<div class="form-group">
+				<label>Referencia:</label>
+				<input type="text" class="form-control" th:field="*{cantidad}" th:value="${cantidad}"/>
+			</div>	
+				<button class="btn btn-primary" >Enviar</button>
+				<a class="btn btn-primary" href="#" th:href="@{/listacompraweb/listado}">Cancelar</a>
+			
+		
+		</form>
+		
+		
+	</div>
 </body>
 </html>

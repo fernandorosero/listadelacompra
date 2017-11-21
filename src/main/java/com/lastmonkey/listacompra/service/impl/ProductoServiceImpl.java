@@ -43,6 +43,12 @@ public class ProductoServiceImpl implements ProductoService{
 		return productosModel;
 	}
 
+	@Override
+	public ProductoModel addProducto(ProductoModel productoModel) {
+		Producto producto = productoRepository.save(productoConverter.convertProductoModel2Producto(productoModel));
+		return productoConverter.convertProducto2ProductoModel(producto);
+	}
+
 	
 	
 }

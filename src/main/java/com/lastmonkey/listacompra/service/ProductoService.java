@@ -8,4 +8,5 @@ import com.lastmonkey.listacompra.model.ProductoModel;
 public interface ProductoService {
 	public abstract List<ProductoModel> listaTodosProductos();
 	public abstract Producto findProductoById(int id);
+	public abstract ProductoModel addProducto(ProductoModel productoModel);
 }
