@@ -16,13 +16,7 @@ import com.lastmonkey.listacompra.service.ProductoService;
 @Service("productoServiceImpl")
 public class ProductoServiceImpl implements ProductoService{
 
-	@Override
-	public Producto findProductoById(int id) {
-		// TODO Auto-generated method stub
-		Producto pr = new Producto();
-		//return productoRepository.findById(id);
-		return pr;
-	}
+	
 
 	@Autowired
 	@Qualifier("productoRepository")
@@ -43,6 +37,34 @@ public class ProductoServiceImpl implements ProductoService{
 		return productosModel;
 	}
 
+	@Override
+	public ProductoModel addProducto(ProductoModel productoModel) {
+		Producto producto = productoRepository.save(productoConverter.convertProductoModel2Producto(productoModel));
+		return productoConverter.convertProducto2ProductoModel(producto);
+	}
+
+	@Override
+	public void borrarContacto(int id) {
+		Producto producto = findProductoById(id);
+		if (null != producto) {
+			productoRepository.delete(producto);
+		}
+	}
+
+	@Override
+	public Producto findProductoById(int id) {
+		// TODO Auto-generated method stub
+		//Producto pr = new Producto();
+		//return productoRepository.findById(id);
+		return productoRepository.findById(id);
+	}
+
+	@Override
+	public ProductoModel findProductoByIdByModel(int id) {
+		// TODO Auto-generated method stub
+		return productoConverter.convertProducto2ProductoModel(findProductoById(id));
+	}
+	
 	
 	
 }

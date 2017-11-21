@@ -15,7 +15,7 @@ public class ProductoConverter {
 	public Producto convertProductoModel2Producto(ProductoModel productoModel) {
 		Producto producto = new Producto();
 		
-		producto.setId_producto(productoModel.getId_producto());
+		producto.setId(productoModel.getId());
 		producto.setProducto(productoModel.getProducto());
 		producto.setCantidad(productoModel.getCantidad());
 		
@@ -29,7 +29,7 @@ public class ProductoConverter {
 	public ProductoModel convertProducto2ProductoModel(Producto producto) {
 		ProductoModel productoModel = new ProductoModel();
 		
-		productoModel.setId_producto(producto.getId_producto());
+		productoModel.setId(producto.getId());
 		productoModel.setProducto(producto.getProducto());
 		productoModel.setCantidad(producto.getCantidad());
 		
