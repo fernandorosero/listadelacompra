@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #banner:
   #location: static/banner/BannerListaCompra.txt
 spring:       ########MY SQL##################
@@ -17,25 +16,3 @@ spring:       ########MY SQL##################
         dialect: org.hibernate.dialect.MySQL5Dialect  #Dialecto de la bbdd
   thymeleaf:
     cache: false
-  
-=======
-#banner:
-  #location: static/banner/BannerListaCompra.txt
-spring:       ########MY SQL##################
-  datasource:
-    url: jdbc:mysql://localhost:3306/listacompra?useSSL=false
-    username: root
-    password: 
-  jpa:        ########HIBERNATE###############
-    show-sql: true
-    hibernate:
-      ddl-auto: update #Si actualiza un campo de la entity elimina el campo de la tabla d ela bbdd
-      naming:
-        strategy: org.hibernate.cfg.ImprovedNamingStrategy  #Forma dialecto al hacer las consultas
-    properties:
-      hibernate:  
-        dialect: org.hibernate.dialect.MySQL5Dialect  #Dialecto de la bbdd
-  thymeleaf:
-    cache: false
-  
->>>>>>> branch 'master' of https://github.com/fernandorosero/listadelacompra.git

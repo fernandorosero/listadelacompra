@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 	<head>
@@ -59,66 +58,4 @@
 			</a>
 		</footer>
 	</body>
-=======
-<!DOCTYPE html>
-<html>
-	<head>
-	
-		<title>Lista de Docs</title>
-		
-		<meta charset="UTF-8"  name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-	
-		<!-- JavaScript -->
-		<script th:src="@{/js/jquery-2.1.4.min.js}"></script>
-		<script th:src="@{/js/bootstrap.min.js}"></script>
-		<script th:src="@{/js/listadelacompra.js}"></script>
-		
-		
-		<!-- CSS -->
-		<link th:href="@{/css/listadelacompra.css}" rel="stylesheet" />
-		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-	</head>
-	<body>
-		<div class="contenido">
-			<header>
-				<h2>Listado de Documentos Pretrade</h2>
-			</header>
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th>Id producto</th>
-						<th>Producto</th>
-						<th>Cantidad</th>
-						<th>Acciones</th>
-					</tr>
-				</thead>
-	
-				<tbody>
-					<tr th:each="producto : ${productos}">
-						<td th:text="${producto.id}"></td>
-						<td th:text="${producto.producto}"></td>
-						<td th:text="${producto.cantidad}"></td>
-						<td>
-							<a href="#" th:href="@{/nuevopro/eliminaproducto?id=__${producto.id}__}">
-								<button type="button" class="btn btn-danger">
-									<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-								</button>
-							</a>
-						</td>
-					</tr>
-				</tbody>
-	
-	
-			</table>
-		</div>
-		<footer>
-			<a href="#" th:href="@{/nuevopro/nuevo?id=0}">
-				<button class="btn btn-primary" type="submit">
-					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-					Add documento
-				</button>
-			</a>
-		</footer>
-	</body>
->>>>>>> branch 'master' of https://github.com/fernandorosero/listadelacompra.git
 </html>
