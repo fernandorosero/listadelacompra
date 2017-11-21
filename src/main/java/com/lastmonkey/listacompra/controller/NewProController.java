@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lastmonkey.listacompra.constants.ViewConstants;
@@ -25,6 +26,15 @@ public class NewProController {
 	@Autowired
 	@Qualifier("productoServiceImpl")
 	private ProductoService productoServicio;
+	
+	@GetMapping("/nuevoform")
+	public String redirectProductoForm(@RequestParam(name = "id", required = false)int id, Model model) {
+		ProductoModel productoModel = new ProductoModel();
+		if (id != 0) {
+			productoModel = productoServicio.findProductoByIdByModel(id);
+		}
+		return ViewConstants.NEW_PRO;
+	}
 	
 	@GetMapping("/nuevo")
 	public ModelAndView showProductos(Model model){
@@ -48,6 +58,19 @@ public class NewProController {
 		
 		return "redirect:/listacompraweb/listado";
 		
+	}
+	
+	@GetMapping("showprod")
+	public ModelAndView showPro(){
+		ModelAndView mav = new ModelAndView(ViewConstants.PRODUCTOS);
+		mav.addObject("productos", productoServicio.listaTodosProductos());
+		return mav;
+	}
+	
+	@GetMapping("/eliminaproducto")
+	public ModelAndView borrarProducto(@RequestParam(name = "id", required = true)int id) {
+		productoServicio.borrarContacto(id);
+		return showPro();
 	}
 
 }

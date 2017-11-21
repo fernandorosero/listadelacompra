@@ -1,5 +1,5 @@
-banner:
-  location: static/banner/BannerListaCompra.txt
+#banner:
+  #location: static/banner/BannerListaCompra.txt
 spring:       ########MY SQL##################
   datasource:
     url: jdbc:mysql://localhost:3306/listacompra?useSSL=false
