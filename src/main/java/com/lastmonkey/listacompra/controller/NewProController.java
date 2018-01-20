@@ -56,7 +56,7 @@ public class NewProController {
 		}
 		
 		
-		return "redirect:/listacompraweb/listado";
+		return "redirect:/listacompraweb";
 		
 	}
 	
@@ -72,7 +72,7 @@ public class NewProController {
 	public String borrarProducto(@RequestParam(name = "id", required = true)int id) {//con esto recarga la vista limpia la url
 		productoServicio.borrarContacto(id);
 		//return showPro(); //de esta manera carga los datos enviados en la url
-		return "redirect:/listacompraweb/listado"; //con esto recarga la vista limpia la url
+		return "redirect:/listacompraweb"; //con esto recarga la vista limpia la url
 	}
 
 }

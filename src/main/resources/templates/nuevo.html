@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		
 		<title>Nuevo Documento</title>
@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div class="contenido">
-		<h2>Nuevo Documento</h2>
+		<h2>Nuevo Producto</h2>
 		
 		<form action="#" th:action="@{/nuevopro/agregarDoc}" th:object="${productoModel}" method="post" >
 			<input type="hidden" th:field="*{id}"></input>
@@ -28,8 +28,8 @@
 				<input type="text" class="form-control" th:field="*{producto}" th:value="${producto}"/>
 			</div>
 			<div class="form-group">
-				<label>Referencia:</label>
-				<input type="text" class="form-control" th:field="*{cantidad}" th:value="${cantidad}"/>
+				<label>Cantidad:</label>
+				<input type="text" class="form-control" th:field="*{cantidad}" th:value="${cantidad}" value="0"/>
 			</div>	
 				<button class="btn btn-primary" >Enviar</button>
 				<a class="btn btn-primary" href="#" th:href="@{/listacompraweb/listado}">Cancelar</a>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 	
 		<title>Lista de Docs</title>
@@ -19,21 +19,19 @@
 	<body>
 		<div class="contenido">
 			<header>
-				<h2>Listado de Documentos Pretrade</h2>
+				<h2>Lista de la Compra</h2>
 			</header>
-			<table class="table table-hover">
+			<table class="table table-hover tablaProductos">
 				<thead>
 					<tr>
-						<th>Id producto</th>
 						<th>Producto</th>
 						<th>Cantidad</th>
-						<th>Acciones</th>
+						<th></th>
 					</tr>
 				</thead>
 	
 				<tbody>
 					<tr th:each="producto : ${productos}">
-						<td th:text="${producto.id}"></td>
 						<td th:text="${producto.producto}"></td>
 						<td th:text="${producto.cantidad}"></td>
 						<td>
@@ -45,15 +43,14 @@
 						</td>
 					</tr>
 				</tbody>
-	
-	
+
 			</table>
 		</div>
 		<footer>
 			<a href="#" th:href="@{/nuevopro/nuevo?id=0}">
 				<button class="btn btn-primary" type="submit">
-					<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-					Add documento
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					Add producto
 				</button>
 			</a>
 		</footer>

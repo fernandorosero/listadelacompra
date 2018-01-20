@@ -11,14 +11,18 @@ import com.lastmonkey.listacompra.constants.ViewConstants;
 import com.lastmonkey.listacompra.service.ProductoService;
 
 @Controller
-@RequestMapping("/listacompraweb")
 public class ListaDeLaCompraController {
 
 	@Autowired
 	@Qualifier("productoServiceImpl")
 	private ProductoService productoService;
 	
-	@GetMapping("/listado")
+	@GetMapping("/")
+	public String mostrarListado() {
+		return "redirect:/listacompraweb";
+	}
+	
+	@GetMapping("/listacompraweb")
 	public ModelAndView showProductos(){
 		
 		ModelAndView mav = new ModelAndView(ViewConstants.PRODUCTOS);

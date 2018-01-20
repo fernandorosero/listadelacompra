@@ -6,6 +6,10 @@
 	margin-top: 30px;
 }
 
+.tablaProductos th, td{
+	text-align: center;
+}
+
 header {
 	text-align: center;
 }

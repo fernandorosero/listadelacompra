@@ -1,10 +1,10 @@
-#banner:
-  #location: static/banner/BannerListaCompra.txt
+banner:
+  location: static/banner/BannerListaCompra.txt
 spring:       ########MY SQL##################
   datasource:
     url: jdbc:mysql://localhost:3306/listacompra?useSSL=false
-    username: root
-    password: 
+    username: monkey
+    password: 4545
   jpa:        ########HIBERNATE###############
     show-sql: true
     hibernate:
@@ -16,3 +16,5 @@ spring:       ########MY SQL##################
         dialect: org.hibernate.dialect.MySQL5Dialect  #Dialecto de la bbdd
   thymeleaf:
     cache: false
+server:
+  port: 9192
